@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hardika portofolio</title>
+  </head>
+  <body>
+    <div class="container" id="home">
+      <div class="navbar">
+        <h1 class="logo">Hardika</h1>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="#saran">Saran</a></li>
+        </ul>
+      </div>
+      <div class="profile">
+        <img src="profile.avif" alt="" />
+        <h1>Hardika</h1>
+      </div>
+      <div class="body-text">
+        <p class="head">Terimakasih sudah singgah!</p>
+        <p class="body">Tak perlu tau prosesku, Nikmati saja instastory kuu</p>
+      </div>
+      <div class="sosmed">
+        <a href="https://instagram.com/hrdiika?igshid=MzNlNGNkZWQ4Mg=="
+          ><img src="instagram.png" alt=""
+        /></a>
+        <a href=""><img src="mail.png" alt="" /></a>
+      </div>
+      <div class="footer">
+        <p>
+          © 2023 - present <span>Hardika.</span><br />
+          All rights reserved.
+        </p>
+      </div>
+    </div>
+    <div id="saran">
+      <div>
+        <h1>Berikan Saran</h1>
+        <p>
+          Berikan pandangan Anda! Bagikan saran dan ide Anda untuk membantu kami
+          tumbuh lebih baik.
+        </p>
+      </div>
+      <form id="suggestionForm" onsubmit="sendEmail(); reset(); return false;">
+        <div class="input">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+        <div class="message">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        const name = document.getElementById("name").value;
+        const message = document.getElementById("message").value;
+        const email = document.getElementById("email").value;
+        const formatBody = `Saran dari ${name}: ${message}`;
+
+        Email.send({
+          SecureToken: "abe6630c-6f38-45a6-9347-2989234f6a1f",
+          From: email,
+          To: "diicxfantastix@gmail.com",
+          Subject: "pesan baru dari web portofolio",
+          Body: formatBody,
+        }).then((message) => alert(message));
+      }
+    </script>
+  </body>
+</html>
