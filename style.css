@@ -209,6 +209,14 @@ button:hover {
 
 /* tampilan mobile */
 @media (max-width: 640px) {
+  .container {
+    overflow: hidden;
+  }
+
+  .navbar {
+    overflow: hidden;
+  }
+
   .profile img {
     width: 150px;
     height: 150px;
