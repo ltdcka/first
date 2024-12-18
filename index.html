@@ -2,90 +2,113 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardika Pangestu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <title>Hardika portofolio</title>
   </head>
   <body>
+    <!-- Navbar -->
     <div class="container" id="home">
       <div class="navbar">
-        <h1 class="logo">Hardika</h1>
-        <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="#saran">Saran</a></li>
-        </ul>
-      </div>
-      <div class="profile">
-        <img src="profile.avif" alt="" />
-        <h1>Hardika</h1>
-      </div>
-      <div class="body-text">
-        <p class="head">Terimakasih sudah singgah!</p>
-        <p class="body">Tak perlu tau prosesku, Nikmati saja instastory kuu</p>
-      </div>
-      <div class="sosmed">
-        <a href="https://instagram.com/hrdiika?igshid=MzNlNGNkZWQ4Mg=="
-          ><img src="instagram.png" alt=""
-        /></a>
-        <a href=""><img src="mail.png" alt="" /></a>
-      </div>
-      <div class="footer">
-        <p>
-          © 2023 - present <span>Hardika.</span><br />
-          All rights reserved.
-        </p>
+        <div class="logo">HARDIKAPEDIA</div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-    <div id="saran">
-      <div>
-        <h1>Berikan Saran</h1>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Hello everyone,i'm Hardika Pangestu.</h1>
         <p>
-          Berikan pandangan Anda! Bagikan saran dan ide Anda untuk membantu kami
-          tumbuh lebih baik.
-        </p>
+          Welcome and warm greetings to you _<</p>
+        <span class="btn">KLALEN.ID</span>
+        <div class="social-links">
+          <a href="https://github.com/ltdcka" target="_blank" class="social-github">
+            <i class="fab fa-github social-icon"></i> <!-- Ikon GitHub -->
+          </a>
+          <a href="https://whatsapp.com/channel/0029Vat0qREJUM2VJILDta40" target="_blank" class="social-whatsapp">
+            <i class="fab fa-whatsapp social-icon"></i> <!-- Ikon WhatsApp -->
+          </a>
+          <a href="https://instagram.com/hrdiika" target="_blank" class="social-instagram">
+            <i class="fab fa-instagram social-icon"></i> <!-- Ikon Instagram -->
+          </a>
+        </div>   
       </div>
-      <form id="suggestionForm" onsubmit="sendEmail(); reset(); return false;">
-        <div class="input">
-          <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
+      <div class="hero-image">
+        <img src="fotoku5.jpg" alt="Hardika Pangestu" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am Hardika Pangestu, a graduate of SMK Negeri 1 Pemalang in 2023. Currently, I am a new student at a university in Indonesia.
+      </p> 
+      <p> 
+        I'm still learning as a frontend developer, but I have a hobby of running.
+      </p>
+      <p>
+        Inpoen mlayu jie.
+      </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacts">
+      <h2>Contact Me!</h2>
+      <p>Lewat sini kak</p>
+      <form id="contactForm" onsubmit="sendEmail(); return false;">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Name..." required />
         </div>
-        <div class="message">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email..." required />
         </div>
-        <div>
-          <button type="submit">Submit</button>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Message..." required></textarea>
         </div>
+        <button type="submit">Submit</button>
       </form>
-    </div>
-    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Hardika Pangestu. All rights reserved.</p>
+    </footer>
+
+    <!-- SMTPJS Script -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
       function sendEmail() {
         const name = document.getElementById("name").value;
-        const message = document.getElementById("message").value;
         const email = document.getElementById("email").value;
-        const formatBody = `Saran dari ${name}: ${message}`;
+        const message = document.getElementById("message").value;
+        
+        const formatBody = `Saran dari ${name} (${email}): ${message}`;
 
+        // Sending the email using SMTPJS
         Email.send({
-          SecureToken: "abe6630c-6f38-45a6-9347-2989234f6a1f",
+          SecureToken: "C973D7AD-F097-4B95-91F4-40ABC5567812", // Replace this with your SecureToken from SMTPJS
           From: email,
-          To: "diicxfantastix@gmail.com",
-          Subject: "pesan baru dari web portofolio",
+          To: "hardikapngestu@gmail.com",  // Your email here
+          Subject: "Pesan Baru dari Web Portofolio",
           Body: formatBody,
-        }).then((message) => alert(message));
+        }).then((message) => {
+          alert("Pesan Anda telah terkirim!");
+        }).catch((error) => {
+          alert("Terjadi kesalahan, pesan gagal terkirim.");
+        });
       }
     </script>
   </body>
