@@ -1,3 +1,96 @@
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    height: auto; 
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+    margin-left: 0;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  #contacts form {
+    width: 100%; 
+    padding: 20px;
+  }
+
+  #contacts form button {
+    width: 100%; 
+  }
+  .social-icon {
+    font-size: 30px;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .hero-content .social-links a:hover .social-icon {
+    transform: scale(1.2);
+  }
+  
+  .hero-content .social-links a:active {
+    transform: scale(1.1);
+  }
+  
+  .hero-content .social-links .social-github:active .social-icon {
+    color: #333 !important;
+  }
+  
+  .hero-content .social-links .social-whatsapp:active .social-icon {
+    color: #25d366 !important;
+  }
+  
+  .hero-content .social-links .social-instagram:active .social-icon {
+    color: #e1306c !important;
+  }
+  #contacts form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #contacts form button {
+    width: 50%;
+    padding: 12px;
+    background-color: #784c34;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  #contacts form button:hover {
+    background-color: #ffffff;
+    color: #784c34;
+  }
+}
+
+
 @font-face {
   font-family: 'Signatra';
   src: url('path/to/Signatra-Regular.ttf') format('truetype');
